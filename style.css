@@ -11,6 +11,11 @@ body{
    margin: 0;
    padding: 0;
 }
+
+#top{
+   background-color: #1E2439;
+   height: 20vh;
+}
 .nav>li>a {
    font-family: 'Alegreya Sans', sans-serif;
    color:white;
@@ -29,10 +34,6 @@ body{
    transition: all 0.5s;
 }
 
-#top{
-   background-color: #1E2439;
-   height: 20%;
-}
 
 .nav>li>a#noBorder{
    border-right: transparent;
@@ -69,25 +70,26 @@ height: 100%;
 
 blockquote#firstSlide, blockquote#secondSlide, 
 blockquote#thirdSlide{
-   color: rgba(0,0,0,0.8);
-   text-shadow: 2px 2px 3px rgba(255,255,255,0.3);
+   color: rgba(0,0,0,1);
+   text-shadow: 2px 2px 7px rgba(255,255,255,1);
    font-weight: 600;
    text-align: center;
    padding: 18%;
    width: 100%;
+   font-size: 27px;
 
 }
 
 blockquote footer{
    color: black;
    padding-top: 20px;
+   font-size: 16px;
 }
 
 blockquote#firstSlide::after{
    content: "";
    background-size: cover;
    background-image: url("images/slide1.jpg");
-   position: absolute;
    opacity: 0.5;
    top: 0;
    left: 0;
@@ -101,7 +103,6 @@ blockquote#secondSlide::after{
    content: "";
    background-size: cover;
    background-image: url("images/slide2.jpg");
-   position: absolute;
    opacity: 0.5;
    top: 0;
    left: 0;
@@ -115,8 +116,7 @@ blockquote#thirdSlide::after{
    content: "";
    background-size: cover;
    background-image: url("images/slide.jpg");
-   position: absolute;
-   opacity: 0.5;
+  opacity: 0.5;
    top: 0;
    left: 0;
    bottom: 0;
@@ -126,16 +126,12 @@ blockquote#thirdSlide::after{
 }
 
 div#carousel-example-generic {
-   z-index: 100;
-   overflow: hidden;
    height: 40%;
-   width: 100%;
 }
+
 
 .carousel-control.right, .carousel-control.left {
    background-image: none;
-   margin-left: 0;
-   padding-left: 0;
 }
 
 .carousel-indicators li{
@@ -143,6 +139,14 @@ div#carousel-example-generic {
 }
 .carousel-indicators .active{
    background-color: #1E2439;
+}
+
+.carousel-inner>.item{
+   height: 80vh;
+}
+
+.carousel-inner>.item.active{
+height: 80vh;   
 }
 
 

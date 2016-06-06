@@ -1,0 +1,12 @@
+
+//In Sass, a mixin lets you make groups of CSS declarations that you want to reuse throughout your site.
+//Mixins also have the ability to take in a value.
+//An argument, or parameter, is a value passed to the mixin that will be used inside the mixin
+//Try to only create mixins that take in an argument, otherwise you should extend.
+//Always look at your CSS output to make sure your extend is behaving as you intended.
+@mixin each-blockquote($file){
+ &:after{
+  @extend %eachblockquote;
+  background-image: url(#{$file}.jpg);  
+ }
+}

@@ -1,0 +1,104 @@
+@font-face{
+ font-family:'titleFont';
+ src: 
+  url("fonts/sofia/Sofia-Regular.otf")
+  format("opentype");
+}
+@import "helper/variables";
+@import "helper/mixins";
+@import "helper/placeholders";
+
+
+body{
+ margin: $no-margin-padding;
+ padding: $no-margin-padding;
+ font: $text-font;
+ color: $font-color;
+}
+
+#allScreen{
+ width: 100%;
+ margin: 0;
+ padding: 0;
+ #top{
+  height: 20vh;
+  background-color: $main-color;
+  h1{
+   font: $title-font;
+   color: beige;
+   border-top: $standart-border;
+   padding-top: 10px;
+   padding-bottom: 0;
+   margin-bottom: 0;
+   margin-bottom: 5px;
+  }
+ }
+}
+
+#firstSlide{
+ @extend %allblockquotes;
+ @include each-blockquote('images/slide');
+}
+
+#secondSlide{
+ @extend %allblockquotes;
+ @include each-blockquote('images/slide1');
+}
+
+#thirdSlide{
+ @extend %allblockquotes;
+ @include each-blockquote('images/slide2');
+}
+
+
+
+.nav>li{
+ text-align: center;
+ a{
+  font: $link-font;
+  color: $font-color;
+  border-right: $standart-border;
+  padding: 2px 10px;
+  &:hover{
+   color: $hover-color;     
+   transition: all 0.5s;   
+   background-color: transparent;
+  }
+ }
+}
+  #noBorder{
+   border-right: transparent;
+  }
+
+#title, #naviBar{
+ display: flex;
+ margin-bottom: 10px;
+ margin-top: 0;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+}
+
+div#carousel-example-generic {
+   height: 40%;
+}
+
+
+.carousel-control.right, .carousel-control.left {
+   background-image: none;
+}
+
+.carousel-indicators li{
+   border: 1px solid #1E2439;
+}
+.carousel-indicators .active{
+   background-color: #1E2439;
+}
+
+.carousel-inner>.item{
+   height: 80vh;
+}
+
+.carousel-inner>.item.active{
+height: 80vh;   
+}

@@ -1,0 +1,26 @@
+//Sometimes, you may create classes solely for the purpose of extending them and never actually use them inside your HTML.
+//Sass anticipated this and allows for a special type of selector called a placeholder. You can think of placeholder selectors as behaving just like a class or id selector, but using the % notation instead of # or .
+
+
+%allblockquotes{
+ line-height: 1.5em;
+ color: rgba(0,0,0,1);
+ text-shadow: 2px 2px 7px rgba(255,255,255,1);
+ font-weight: 600;
+ text-align: center;
+ padding: 18%;
+ width: 100%;
+ font-size: 27px;
+}
+
+%eachblockquote{
+ content: "";
+ background-size: cover;
+ opacity: 0.5;
+ top: 0;
+ left: -10px;
+ bottom: 0;
+ right: 0;
+ position: absolute;
+ z-index: -1; 
+}
