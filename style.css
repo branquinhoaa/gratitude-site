@@ -7,14 +7,16 @@
 
 body{
    color: white;
-   font-family: 'Open Sans', sans-serif;
+   font-family: 'Alegreya Sans','Open Sans', sans-serif;
+   margin: 0;
+   padding: 0;
 }
 .nav>li>a {
    font-family: 'Alegreya Sans', sans-serif;
    color:white;
-   font-size: 20px;
+   font-size: 16px;
    border-right: 1px solid white;
-   padding: 2px 20px;
+   padding: 2px 10px;
 }
 
 .nav>li{
@@ -29,6 +31,7 @@ body{
 
 #top{
    background-color: #1E2439;
+   height: 20%;
 }
 
 .nav>li>a#noBorder{
@@ -37,8 +40,8 @@ body{
 
 #title, #naviBar{
    display: flex;
-   margin-bottom: 20px;
-   margin-top: 10px;
+   margin-bottom: 10px;
+   margin-top: 0;
    flex-direction: column;
    align-items: center;
    justify-content: center;
@@ -48,9 +51,155 @@ body{
 h1{
    font-family: 'titleFont',cursive;
    border-top:1px solid white;
-   padding-top: 20px;
+   padding-top: 10px;
    padding-bottom: 0;
    margin-bottom: 0;
-   font-size: 60px;
-   margin-bottom: 30px;
+   font-size: 30px;
+   margin-bottom: 5px;
+}
+/*
+img{
+z-index: 100;
+opacity: 0.7;
+filter: alpha(opacity=70);
+overflow: hidden;
+height: 100%;
+}*/
+
+
+blockquote#firstSlide, blockquote#secondSlide, 
+blockquote#thirdSlide{
+   color: rgba(0,0,0,0.8);
+   text-shadow: 2px 2px 3px rgba(255,255,255,0.3);
+   font-weight: 600;
+   text-align: center;
+   padding: 18%;
+   width: 100%;
+
+}
+
+blockquote footer{
+   color: black;
+   padding-top: 20px;
+}
+
+blockquote#firstSlide::after{
+   content: "";
+   background-size: cover;
+   background-image: url("images/slide1.jpg");
+   position: absolute;
+   opacity: 0.5;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   right: 0;
+   position: absolute;
+   z-index: -1;   
+}
+
+blockquote#secondSlide::after{
+   content: "";
+   background-size: cover;
+   background-image: url("images/slide2.jpg");
+   position: absolute;
+   opacity: 0.5;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   right: 0;
+   position: absolute;
+   z-index: -1;   
+}
+
+blockquote#thirdSlide::after{
+   content: "";
+   background-size: cover;
+   background-image: url("images/slide.jpg");
+   position: absolute;
+   opacity: 0.5;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   right: 0;
+   position: absolute;
+   z-index: -1;   
+}
+
+div#carousel-example-generic {
+   z-index: 100;
+   overflow: hidden;
+   height: 40%;
+   width: 100%;
+}
+
+.carousel-control.right, .carousel-control.left {
+   background-image: none;
+   margin-left: 0;
+   padding-left: 0;
+}
+
+.carousel-indicators li{
+   border: 1px solid #1E2439;
+}
+.carousel-indicators .active{
+   background-color: #1E2439;
+}
+
+
+#allScreen{
+   margin: 0;
+   padding: 0;
+   width: 100%;
+}
+
+
+
+
+
+
+
+
+/*==========  Non-Mobile First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+   #naviBar{
+      display: none;
+   }
+
+   h1{
+      font-size: 20px;
+   }
+
+   ol.carousel-indicators li, ol.carousel-indicators .active{
+      width: 7px;
+      height: 7px;
+   }
+
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+   blockquote p{
+      font-size: 15px;
+   }
+
+}
+
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width : 320px) {
+   blockquote p, blockquote footer{
+      font-size: 12px;
+   }
+
 }
