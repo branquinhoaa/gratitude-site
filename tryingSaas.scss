@@ -8,7 +8,6 @@
 @import "helper/mixins";
 @import "helper/placeholders";
 
-
 body{
  margin: $no-margin-padding;
  padding: $no-margin-padding;
@@ -21,16 +20,18 @@ body{
  margin: 0;
  padding: 0;
  #top{
-  height: 20vh;
+  height: 100%;
   background-color: $main-color;
+  z-index: 102;
+  position: relative;
   h1{
    font: $title-font;
    color: beige;
    border-top: $standart-border;
    padding-top: 10px;
-   padding-bottom: 0;
-   margin-bottom: 0;
-   margin-bottom: 5px;
+   margin: 0;
+   margin-top: 1%;
+   margin-bottom: 1%;
   }
  }
 }
@@ -66,39 +67,337 @@ body{
   }
  }
 }
-  #noBorder{
-   border-right: transparent;
-  }
+#noBorder{
+ border-right: transparent;
+}
 
 #title, #naviBar{
  display: flex;
- margin-bottom: 10px;
- margin-top: 0;
+ margin: 0;
  flex-direction: column;
  align-items: center;
  justify-content: center;
 }
 
 div#carousel-example-generic {
-   height: 40%;
+ height: 40%;
+ position: relative;
+ top: -38px;
 }
 
 
 .carousel-control.right, .carousel-control.left {
-   background-image: none;
+ background-image: none;
 }
 
 .carousel-indicators li{
-   border: 1px solid #1E2439;
+ border: 1px solid #1E2439;
 }
 .carousel-indicators .active{
-   background-color: #1E2439;
+ background-color: #1E2439;
 }
 
 .carousel-inner>.item{
-   height: 80vh;
+ height: 81vh;
+ margin-top: 2%;
 }
 
 .carousel-inner>.item.active{
-height: 80vh;   
+ height: 81vh;   
+}
+
+.carousel-indicators {
+ position: absolute;
+ top:82%;
+}
+
+#allBox{
+ width: 100%;
+ display: flex;
+ justify-content: space-between;
+ margin: 0;
+}
+
+.pinkBox{    
+ width: 100%;
+ height: 400px;
+ background-color: #EC9E9E;
+ text-align: center;
+ padding: 10%;
+ position: relative;
+ top: -84px;
+ display: block;
+ color: $font-color;
+ text-align: center;
+ border-radius: 10px;
+ &:hover{
+  background-color: $main-color;
+  transition: all 0.5s;
+
+ }
+ img{
+  height: auto;
+  width: auto;
+  max-width: 80%;
+  max-height: 80%;
+  position: absolute;
+  top: 133px;
+  left: 24px;
+  bottom: 0;
+  right: 0;
+ }
+ h3{ 
+  border-bottom: $standart-border;
+  font-size: 30px;
+  font-variant: small-caps;
+ }
+}
+
+a.boxLink{
+ display: block;
+}
+
+
+.testimonials{
+ background-color: #5C627C;
+ width: 100%;
+ h2{
+  text-align: center;
+  padding: 10px;
+  font-size: 48px;
+  margin-bottom: 50px;
+  font-variant: small-caps;
+ }
+ .thumbnail{
+  background-color: transparent;
+  border: none;  
+  img{
+   width: 100px;
+   height: 100px;
+   border-radius: 50%;
+  }
+  h3,p{
+   padding: 10px;
+   color:white;
+   text-align: justify;
+  }
+  h3{
+   text-align: center;
+  }
+ }
+}
+
+.jumbotron{
+ padding: 20px 5%;
+ color: black;
+ margin-bottom: 0px;
+ h1{
+  text-align: center;
+  padding: 10px;
+  font-size: 48px;
+  margin-bottom: 50px;
+  font-variant: small-caps;
+ }
+ #buyBtn{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+ .btn-primary{
+  width: 13%;
+  height: 55px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+ p{
+  text-align: justify;
+  line-height: 1.42857143;
+  font-size: 18px;
+ }
+}
+
+
+footer{
+ margin: 0;
+ ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin: 0px;
+  align-items: center;
+  li{
+   padding-right: 30px;
+   padding-top: 5px;
+   font-size: 20px;
+   a{
+    color: transparent;
+   }
+  }
+ }
+}
+
+a.navbar-brand{
+ font: $title-font;
+ color: $main-color;
+ padding-left: 41px;
+}
+
+li.sprite{
+ color: transparent;
+ border-radius: 50%;
+ margin: 10px;
+ padding: 8px 0px;
+}
+a{
+ display: block;
+}
+ .face{
+  background:url('images/icons.jpg')585px -92px;
+ }
+ .insta{
+  background: url('images/icons.jpg')462px 349px;
+ }
+ .twitter{
+  background: url('images/icons.jpg')541px -92px;
+ }
+
+/*==========  Non-Mobile First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+ #allBox{
+  height: 70vh;
+ }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+ .pinkBox{    
+  height: 330px;
+  width: 90%;
+  padding: 7%;
+  top: -136px;
+ } 
+
+ .carousel-indicators {
+  top:71%;
+ }
+
+ #firstSlide, #secondSlide, #thirdSlide{
+  height: 70vh;
+ }
+
+ #allBox{
+  height: 50vh;
+ }
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+ #naviBar{
+  display: none;
+ }
+
+ blockquote {
+  p{
+   font-size: 22px;
+  }
+  footer{
+   font-size: 19px;
+  }
+ }
+
+ .pinkBox{    
+  height: 250px;
+  img{
+   top:100px;
+   left: 13px;
+  }
+  h3{
+   font-size: 24px;
+  }
+ }
+
+ #title{
+  margin-top: 4%;
+ }
+
+
+ ol.carousel-indicators li, ol.carousel-indicators .active{
+  width: 7px;
+  height: 7px;
+ }
+
+ #firstSlide, #secondSlide, #thirdSlide{
+  padding-top: 20%
+ }
+
+ #allBox{
+  height: 30vh;
+ }
+
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+ blockquote {
+  p{
+   font-size: 18px;
+  }
+  footer{
+   font-size: 16px;
+  }
+ }
+ .pinkBox{    
+  height: 200px;
+  img {
+   top: 90px;
+   left: 13px;
+  }
+  h3{
+   font-size: 20px;
+  }
+ }
+
+
+ #firstSlide,#secondSlide,#thirdSlide{
+  padding-top: 23%;
+ }
+
+ #allBox{
+  height: 15vh;
+ }
+}
+
+
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width : 320px) {
+ blockquote p, blockquote footer{
+  font-size: 16px;
+ }
+ .pinkBox{    
+  height: 150px;
+  img {
+   top: 70px;
+   left: 5px;
+  }
+  h3{
+   font-size: 15px;
+  }
+ }
+ .carousel-indicators {
+  top: 75%;
+ }
+
+ #firstSlide,#secondSlide,#thirdSlide{
+  padding-top: 40%;
+ }
+
+
 }
